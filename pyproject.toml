@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "alacritty-styles"
+version = "0.1.0"
+description = "A simple program for changing Alacritty colors."
+authors = ["Bruno Silva Oliveira <brunooliveira095@protonmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.27.1"
+click = "^8.1.2"
+"ruamel.yaml" = "^0.17.21"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+alacritty-styles = 'alacritty_styles.main:cli'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
