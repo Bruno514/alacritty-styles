@@ -27,7 +27,6 @@ def cli(list_themes, theme):
         apply_colorscheme(colorschemes, config_file, theme)
     else:
         raise click.BadArgumentUsage("Need a parameter")
-    click.help_option()
 
 
 if __name__ == "__main__":
