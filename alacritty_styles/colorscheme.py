@@ -3,6 +3,7 @@ from os.path import isfile
 from click import UsageError, echo, echo_via_pager, style
 from requests import get
 from ruamel.yaml import YAML
+from ruamel.yaml.comments import CommentedMap
 
 y = YAML()
 
@@ -21,6 +22,8 @@ def apply_colorscheme(colorschemes, config_path, theme):
     # Include the file
     with open(config_path, 'r+') as f:
         content = y.load(f)
+        if type(content) != CommentedMap:
+            content = CommentedMap()
         content["colors"] = colorschemes["schemes"][theme]
         f.seek(0)
         y.dump(content, f)
