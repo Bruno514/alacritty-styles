@@ -19,7 +19,6 @@ def apply_colorscheme(colorschemes, config_path, theme):
     if not isfile(config_path):
         raise UsageError("Could not find default configuration file")
 
-    # Include the file
     with open(config_path, 'r+') as f:
         content = y.load(f)
         if type(content) != CommentedMap:
